@@ -1,10 +1,11 @@
 BIN_DIR=./bin
 SRC_DIR=./src
+TEST_DIR=./test
 RUSTC=rustc
 EXECUTABLE=$(BIN_DIR)/bill
 TEST_EXECUTABLE=$(BIN_DIR)/bill_tests
 SOURCES=$(SRC_DIR)/bill.rs
-TEST_SOURCES=$(SRC_DIR)/bill_tests.rs
+TEST_SOURCES=$(TEST_DIR)/bill_tests.rs
 
 all: bill test
 
