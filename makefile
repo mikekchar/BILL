@@ -1,21 +1,22 @@
 BIN_DIR=./bin
 SRC_DIR=./src
+RUSTC=rustc
+EXECUTABLE=$(BIN_DIR)/bill
+TEST_EXECUTABLE=$(BIN_DIR)/bill_tests
 
-all: setup bill test
-
-setup: $(BIN_DIR)
+all: $(BIN_DIR) $(EXECUTABLE) test
 
 clean:
 	rm -rf $(BIN_DIR)
 	
 $(BIN_DIR):
-	mkdir $(BIN_DIR)
+	mkdir $@
 
-bill: $(SRC_DIR)/bill.rs
-	rustc $(SRC_DIR)/bill.rs -o $(BIN_DIR)/bill
+$(EXECUTABLE): $(SRC_DIR)/bill.rs
+	$(RUSTC) $(SRC_DIR)/bill.rs -o $@
 
-test: bill_tests
-	$(BIN_DIR)/bill_tests
+test: $(TEST_EXECUTABLE)
+	$(TEST_EXECUTABLE)
 
-bill_tests: $(SRC_DIR)/bill_tests.rs
-	rustc --test $(SRC_DIR)/bill_tests.rs -o $(BIN_DIR)/bill_tests
+$(TEST_EXECUTABLE): $(SRC_DIR)/bill_tests.rs
+	$(RUSTC) --test $(SRC_DIR)/bill_tests.rs -o $@
