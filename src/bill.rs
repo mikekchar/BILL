@@ -1,5 +1,6 @@
 mod ledger;
 
 fn main() {
-    ledger::print();
+    let printer = ledger::ConsolePrinter;
+    ledger::print(&printer);
 }

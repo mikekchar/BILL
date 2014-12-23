@@ -1,8 +1,8 @@
-trait Printer {
+pub trait Printer {
     fn print(&self, message: &'static str);
 }
 
-struct ConsolePrinter;
+pub struct ConsolePrinter;
 
 impl Printer for ConsolePrinter {
     fn print(&self, message: &str) {
@@ -10,8 +10,6 @@ impl Printer for ConsolePrinter {
     }
 }
 
-pub fn print() {
-    let printer = ConsolePrinter;
-
+pub fn print(printer: &Printer) {
     printer.print("beer name:");
 }
