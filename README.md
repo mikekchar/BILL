@@ -68,12 +68,18 @@ I will try to track stories in this README.  Hopefully it will give you
 an idea of what BILL is supposed to do and roughly what order it will get
 the functionality.
 
+Remember: BILL is a filter that calculates brewing information from an input file,
+          prints it to an output file along with prompts for how the user can further
+          complete the input.  The file is a ledger that describes a recipe, plan
+          and ultimately results of the plan.
+
 1. BILL outputs a field for the name of the beer
 2. BILL Reads its output and echos it
-3. BILL Reads its output with details filled in and echos it with the details
+3. BILL Reads its output with details filled in and echos it with the details intact
 4. BILL outputs a field for the style
 5. BILL allows input of a style db entry and leaves it unchanged
 6. If the style matches a style db entry value, BILL outputs guideline values for the recipe
 7. Bill allows input of a comment and leaves it unchanged
 8. If there is no style listed, BILL adds a list of styles from the style DB in comments
 9. If there is a style and there are style comments in the file, BILL removes the style comments
+10. BILL allows the style db to be loaded from a second file using a command line parameter
