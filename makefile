@@ -3,6 +3,8 @@ SRC_DIR=./src
 RUSTC=rustc
 EXECUTABLE=$(BIN_DIR)/bill
 TEST_EXECUTABLE=$(BIN_DIR)/bill_tests
+SOURCES=$(SRC_DIR)/bill.rs
+TEST_SOURCES=$(SRC_DIR)/bill_tests.rs
 
 all: bill test
 
@@ -19,8 +21,8 @@ test: setup $(TEST_EXECUTABLE)
 $(BIN_DIR):
 	mkdir $@
 
-$(EXECUTABLE): $(SRC_DIR)/bill.rs
-	$(RUSTC) $(SRC_DIR)/bill.rs -o $@
+$(EXECUTABLE): $(SOURCES)
+	$(RUSTC) $(SOURCES) -o $@
 
-$(TEST_EXECUTABLE): $(SRC_DIR)/bill_tests.rs
-	$(RUSTC) --test $(SRC_DIR)/bill_tests.rs -o $@
+$(TEST_EXECUTABLE): $(TEST_SOURCES)
+	$(RUSTC) --test $(TEST_SOURCES) -o $@
