@@ -18,17 +18,17 @@ pub fn print(printer: &Printer) {
 
 #[cfg(test)]
 mod tests {
-    struct FakePrinter<'a> {
+    struct MockPrinter<'a> {
         expect: &'a str,
     }
 
-    impl<'a> FakePrinter<'a> {
-        fn expect(message: &'a str) -> FakePrinter<'a> {
-            FakePrinter { expect: message }
+    impl<'a> MockPrinter<'a> {
+        fn expecting(message: &'a str) -> MockPrinter<'a> {
+            MockPrinter { expect: message }
         }
     }
 
-    impl<'a> super::Printer for FakePrinter<'a> {
+    impl<'a> super::Printer for MockPrinter<'a> {
         fn print(&self, message: &'static str) {
             assert!(self.expect == message);
         }
@@ -36,7 +36,7 @@ mod tests {
 
     #[test]
     fn it_prints_the_beer_name_prompt() {
-        let printer = FakePrinter::expect("beer name:");
+        let printer = MockPrinter::expecting("beer name:");
         super::print(&printer);
     }
 }
