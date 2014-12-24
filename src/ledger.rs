@@ -1,5 +1,5 @@
 pub trait Printer {
-    fn print(&self, message: &'static str);
+    fn print(&self, message: &str);
 }
 
 #[cfg(not(test))]
@@ -7,7 +7,7 @@ pub struct ConsolePrinter;
 
 #[cfg(not(test))]
 impl Printer for ConsolePrinter {
-    fn print(&self, message: &'static str) {
+    fn print(&self, message: &str) {
         println!("{}", message);
     }
 }
@@ -29,7 +29,7 @@ mod tests {
     }
 
     impl<'a> super::Printer for MockPrinter<'a> {
-        fn print(&self, message: &'static str) {
+        fn print(&self, message: &str) {
             assert!(self.expect == message);
         }
     }
