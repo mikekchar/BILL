@@ -36,7 +36,8 @@ mod tests {
 
     #[test]
     fn it_prints_the_beer_name_prompt() {
-        let printer = MockPrinter::expecting("beer name:");
+        let message = "beer name:";
+        let printer = MockPrinter::expecting(message);
         super::print(&printer);
     }
 }
