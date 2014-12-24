@@ -22,6 +22,12 @@ mod tests {
         expect: &'a str,
     }
 
+    impl<'a> FakePrinter<'a> {
+        fn expect(message: &'a str) -> FakePrinter<'a> {
+            FakePrinter { expect: message }
+        }
+    }
+
     impl<'a> super::Printer for FakePrinter<'a> {
         fn print(&self, message: &'static str) {
             assert!(self.expect == message);
@@ -29,8 +35,8 @@ mod tests {
     }
 
     #[test]
-    fn it_passes() {
-        let printer = FakePrinter { expect: "beer name:" };
+    fn it_prints_the_beer_name_prompt() {
+        let printer = FakePrinter::expect("beer name:");
         super::print(&printer);
     }
 }

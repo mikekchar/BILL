@@ -73,8 +73,9 @@ Remember: BILL is a filter that calculates brewing information from an input fil
           complete the input.  The file is a ledger that describes a recipe, plan
           and ultimately results of the plan.
 
-1. BILL outputs a field for the name of the beer
+1. DONE: BILL outputs a field for the name of the beer
 2. BILL Reads its output and echos it
+3. BILL writes an error to STDERR if there is input it doesn't recognise
 3. BILL Reads its output with details filled in and echos it with the details intact
 4. BILL outputs a field for the style
 5. BILL allows input of a style db entry and leaves it unchanged
