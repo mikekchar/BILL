@@ -18,42 +18,50 @@ learn it.
 
 ## Concept
 
-BILL is really a filter for a brewing ledger.  To start you
-simply run BILL, passing it no input file.  It will respond
+`bill` is really a filter for a brewing ledger.  To start you
+simply run `bill`, passing it no input file.  It will respond
 with a skeleton file for you to fill out.  You can fill out
 as much information as you want and if you get stuck at any
-point, you simply give the file back to BILL to fill in more
+point, you simply give the file back to `bill` to fill in more
 details.
 
-BILL takes input files and calculates anything that it is able
+`bill` takes input files and calculates anything that it is able
 to calculate and returns a copy of the input file with the
 calculations made.  So for instance, you might write a list
-of malts for the grain bill, along with percentages.  BILL
+of malts for the grain bill, along with percentages.  `bill`
 will then calculate the current gravity of that malt bill.
 
-BILL will also make suggestions.  So if you have no malt,
-BILL will give you a list of malt that you could choose
-from.  You keep modifying the files that BILL gives you and
-sending them back to BILL until the document is as
+`bill` will also make suggestions.  So if you have no malt,
+`bill` will give you a list of malt that you could choose
+from.  You keep modifying the files that `bill` gives you and
+sending them back to `bill` until the document is as
 complete as you want it.
 
 ## Building BILL
 
-You will need to install the Rust compiler and Gnu make.
+You will need to install the Rust compiler and Cargo (the Rust
+package manager/build tool).
+
 After that you can simply
 
 ```
-make
+cargo build
 ```
 
-This will build the executable in `bin/bill` and run the tests.
+This will build the executable in `target/bill`.  To run the
+executable, you can run it normally from the `target` directory
+or type
+
+```
+cargo run
+```
 
 ## Running the unit tests
 
 You can just:
 
 ```
-make check
+cargo test
 ```
 
 To run the unit tests.
@@ -73,14 +81,26 @@ Remember: BILL is a filter that calculates brewing information from an input fil
           complete the input.  The file is a ledger that describes a recipe, plan
           and ultimately results of the plan.
 
-1. DONE: BILL outputs a field for the name of the beer
-2. BILL Reads its output and echos it
-3. BILL writes an error to STDERR if there is input it doesn't recognise
-3. BILL Reads its output with details filled in and echos it with the details intact
-4. BILL outputs a field for the style
-5. BILL allows input of a style db entry and leaves it unchanged
-6. If the style matches a style db entry value, BILL outputs guideline values for the recipe
-7. Bill allows input of a comment and leaves it unchanged
-8. If there is no style listed, BILL adds a list of styles from the style DB in comments
-9. If there is a style and there are style comments in the file, BILL removes the style comments
-10. BILL allows the style db to be loaded from a second file using a command line parameter
+*** Stories that are done
+**** DONE BILL outputs a field for the name of the beer
+    :PROPERTIES:
+    :Effort: 2
+    :Done: 2
+    :END
+**** DONE Use Cargo to build instead of make
+    :PROPERTIES:
+    :Effort: 1
+    :Done: 1
+    :END
+
+*** Stories in the backlog
+**** TODO BILL Reads its output and echos it
+**** TODO BILL writes an error to STDERR if there is input it doesn't recognise
+**** TODO BILL Reads its output with details filled in and echos it with the details intact
+**** TODO BILL outputs a field for the style
+**** TODO BILL allows input of a style db entry and leaves it unchanged
+**** TODO If the style matches a style db entry value, BILL outputs guideline values for the recipe
+**** TODO Bill allows input of a comment and leaves it unchanged
+**** TODO If there is no style listed, BILL adds a list of styles from the style DB in comments
+**** TODO If there is a style and there are style comments in the file, BILL removes the style comments
+**** TODO BILL allows the style db to be loaded from a second file using a command line parameter
