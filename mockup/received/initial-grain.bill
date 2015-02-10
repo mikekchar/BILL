@@ -1,0 +1,40 @@
+BILL Recipe
+===========
+
+General
+-------
+Beer Name: Redemption Bitter
+Style: Special Bitter
+Brewer: Mike Charlton
+Date: *2015-02-10
+
+Overview
+--------
+OG: 1.045
+IBU: 30.0
+BU/GU Ratio: *0.667 
+SRM: *
+Volume: 20.0L
+
+Fermentables
+------------
+- 88% 2 Row
+# - 88% American Pale 2 Row, 38 PPG, 1.8L
+# - 88% American Toasted 2 Row, 33 PPG, 30L
+# - 88% Canadian Pale 2 Row, 36 PPG, 1.75L
+# - 88% UK Pale 2 Row, 38 PPG, 2.5L
+
+- 6% Chrystal, 60L
+# - 6% American Caramel/Crystal, 34 PPG, 60L
+# - 6% UK Crystal, 34 PPG, 60L
+
+- *6% Munich
+# - *6% American Light Munich, 33 PPG, 10L
+# - *6% American Dark Munich, 33 PPG, 20L
+# - *6% Canadian Light Munich, 34 PPG, 10L
+# - *6% Canadian Dark Munich, 34 PPG, 32L
+# - *6% German Light Munich, 37 PPG, 6L
+# - *6% German Dark Munich, 37 PPG, 15.5L
+# - *6% German CaraMunich I, 34 PPG, 39L
+# - *6% German CaraMunich II, 34 PPG, 46L
+# - *6% German CaraMunich III, 34 PPG, 57L
