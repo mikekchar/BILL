@@ -18,24 +18,39 @@ learn it.
 
 ## Concept
 
-`bill` is really a filter for a brewing ledger.  To start you
-simply run `bill`, passing it no input file.  It will respond
+`BILL` is really a filter for a brewing ledger.  To start you
+simply run `BILL`, passing it no input file.  It will respond
 with a skeleton file for you to fill out.  You can fill out
 as much information as you want and if you get stuck at any
-point, you simply give the file back to `bill` to fill in more
+point, you simply give the file back to `BILL` to fill in more
 details.
 
-`bill` takes input files and calculates anything that it is able
+`BILL` takes input files and calculates anything that it is able
 to calculate and returns a copy of the input file with the
 calculations made.  So for instance, you might write a list
-of malts for the grain bill, along with percentages.  `bill`
-will then calculate the current gravity of that malt bill.
+of malts for the grain BILL, along with percentages.  `BILL`
+will then calculate the current gravity of that malt BILL.
 
-`bill` will also make suggestions.  So if you have no malt,
-`bill` will give you a list of malt that you could choose
-from.  You keep modifying the files that `bill` gives you and
-sending them back to `bill` until the document is as
+`BILL` will also make suggestions.  So if you have no malt,
+`BILL` will give you a list of malt that you could choose
+from.  You keep modifying the files that `BILL` gives you and
+sending them back to `BILL` until the document is as
 complete as you want it.
+
+## TODO
+
+I'm going to experiment with a different form of TODO planning.
+Since `BILL` only transforms files, things TODO are most
+easily shown by describing a starting file and the desired
+transition.  All implemented and unimplemented features are
+described in the `scenario` directory.  Implemented features
+are in `scenario/implemented` while unimplemented features
+are in `scenario/unimplemented`.
+
+If you wish to work on `BILL` all you have to do is pick a
+transformation that is not implemented and implement it.
+Then move the 2 files (the user input and the response
+that BILL generated) into the `implemented` directory.
 
 ## Building BILL
 
