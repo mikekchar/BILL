@@ -19,7 +19,7 @@ learn it.
 ## Concept
 
 `BILL` is really a filter for a brewing ledger.  To start you
-simply run `BILL`, passing it no input file.  It will respond
+simply run `bill`, passing it no input file.  It will respond
 with a skeleton file for you to fill out.  You can fill out
 as much information as you want and if you get stuck at any
 point, you simply give the file back to `BILL` to fill in more
@@ -83,5 +83,10 @@ To run the unit tests.
 
 ## Installation
 
-You can not install because BILL does nothing yet.
+### Vim plugin
+
+There is a minimal syntax highlighting file in the `vim-bill` directory.  This
+can be installed in your `bundle` directory using `pathogen`.
+
+`BILL` does nothing yet, so there is no point in installing anywhere.
 
