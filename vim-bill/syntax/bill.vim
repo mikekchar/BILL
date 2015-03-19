@@ -16,7 +16,7 @@ syn match billHeadingRule "^[=-]\+$" contained
 syn match billType "^[^#]\+:" nextgroup=@billRecord skipwhite
 syn match billListEntry "^-" nextgroup=@billRecord skipwhite
 syn match billRequestSection "^\*$"
-syn cluster billRecord contains=billUserData,billSeparator,billData
+syn cluster billRecord contains=billUserData,billSeparator,billRequest
 syn match billRequest "\*" contained nextgroup=billData
 syn match billData "[^,]\+" contained nextgroup=@billRecord
 syn match billUserData "[^,*]\+" contained nextgroup=@billRecord
