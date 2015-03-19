@@ -16,11 +16,11 @@ syn match billHeadingRule "^[=-]\+$" contained
 syn match billType "^[^#]\+:" nextgroup=@billRecord skipwhite
 syn match billListEntry "^-" nextgroup=@billRecord skipwhite
 syn match billRequestSection "^\*$"
-syn cluster billRecord contains=@billField,billFields
-syn cluster billField contains=billRequest,billUserData
-syn match billRequest "\*" contained
-syn match billUserData "[^,*]*" contained
-syn region billFields start="[^,\s]" end=",\s*" oneline contained contains=@billField
+syn cluster billRecord contains=billUserData,billSeparator,billData
+syn match billRequest "\*" contained nextgroup=billData
+syn match billData "[^,]\+" contained nextgroup=@billRecord
+syn match billUserData "[^,*]\+" contained nextgroup=@billRecord
+syn match billSeparator "," contained nextgroup=@billRecord skipwhite
 
 hi def link billComment               Comment
 hi def link billType                  Type
@@ -30,5 +30,6 @@ hi def link billHeadingRule           markdownHeadingRule
 hi def link billRequestSection        Special
 hi def link billRequest               Statement
 hi def link billData                  SpecialChar
-hi def link billUserData              Comment
+hi def link billUserData              Normal
 hi def link billListEntry             Statement  
+hi def link billSeparator             Delimiter
